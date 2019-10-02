@@ -1,0 +1,79 @@
+<script>
+//1
+let hashtag = "#"
+while(hashtag.length < 8) {
+  console.log(hashtag)
+  hashtag += "#"
+}
+
+let hashtag = "#"
+let counter
+for(counter = 0; counter < 7; counter++) {
+  console.log(hashtag)
+  hashtag += "#"
+}
+
+//2
+for(let current = 1; current < 101; current++) {
+  if(current % 3 == 0 && current % 5 == 0) {
+    console.log("FizzBuzz")
+  } else if (current % 3 == 0) {
+    console.log("Fizz")
+  } else if (current % 5 == 0) {
+    console.log("Buzz")
+  } else {
+    console.log(current)
+  }
+}
+
+let current = 1
+while(current <= 100) {
+  if(current % 3 == 0 && current % 5 == 0) {
+    console.log("FizzBuzz")
+  } else if (current % 3 == 0) {
+    console.log("Fizz")
+  } else if (current % 5 == 0) {
+    console.log("Buzz")
+  } else {
+    console.log(current)
+  }
+current ++
+}
+//3
+let size = 8
+let board = ""
+let height
+let width 
+for(height = 0; height < size; height++) {
+  for(width = 0; width < size; width++) {
+    if(board.length % 2 == 0) {
+	  board += " "
+	} else {
+	  board += "#"
+	}
+  }
+  board += "\n"
+}
+console.log(board)
+
+let size = 8
+let board = ""
+let height = 0
+let line = 0
+while(height < size) {
+  while(line < size) {
+    if(board.length % 2 == 0) {
+	  board += " "
+	  line++
+	} else {
+	  board += "#"
+	  line++
+	}
+  }
+  board += "\n"
+  line = 0
+  height++
+}
+console.log(board)
+
+</script>

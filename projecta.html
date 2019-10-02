@@ -1,0 +1,39 @@
+<script>
+
+//alert("Think of a number between 1 and 100. Tell me if your number is bigger or smaller using > and <. Type 'yes' if I guess correctly");
+let guess;
+let answer;
+let min = 1;
+let max = 100;
+
+const getGuess = function(max, min) {
+  guess = Math.floor((max + min)/2);
+  return guess;
+}
+
+const getResponse = function(guess) {
+  answer = prompt("Is your number " + guess + "?").toLowerCase();
+}
+
+getGuess(max, min);
+getResponse(guess);
+
+while(answer != "yes") {
+  if(answer == ">") {
+    min = guess + 1;
+	getGuess(max, min);
+	getResponse(guess);
+  } else if(answer == "<") {
+    max = guess - 1;
+	getGuess(max, min);
+	getResponse(guess);
+  } else {
+    break;
+  };
+};
+
+if(answer == "yes") {
+  alert("Hooray! I won!");
+};
+
+</script>
