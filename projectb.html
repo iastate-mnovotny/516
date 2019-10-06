@@ -1,0 +1,35 @@
+<script>
+
+let shift = parseInt(prompt("Enter the integer representing your desired shift."));
+let text = prompt("Enter the text you want encrypted.");
+let encrypted = []
+
+for (let letter = 0; letter < text.length; letter++) {
+	let ascii = text.charCodeAt(letter);
+	if (ascii >= 65 && ascii <= 90) {
+		let encoded = ascii + shift;
+		console.log(encoded)
+		if (encoded > 90) {
+			encoded = encoded - 26;
+		} else if (encoded < 65) {
+			encoded = encoded + 26;
+		}	
+		encrypted.push(String.fromCharCode(encoded))
+	} else if (ascii >= 97 && ascii <=122) {
+		let encoded = ascii + shift
+		console.log(encoded)
+		if (encoded > 122) {
+			encoded = encoded - 26;
+		} else if(encoded < 97) {
+			encoded = encoded + 26;
+		}
+		encrypted.push(String.fromCharCode(encoded))
+	} else {
+		encrypted.push(String.fromCharCode(ascii))
+	}
+}
+
+alert(encrypted.join(""));
+
+
+</script>
