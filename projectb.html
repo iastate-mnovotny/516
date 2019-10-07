@@ -7,21 +7,21 @@ let encrypted = []
 for (let letter = 0; letter < text.length; letter++) {
 	let ascii = text.charCodeAt(letter);
 	if (ascii >= 65 && ascii <= 90) {
-		let encoded = ascii + shift;
-		console.log(encoded)
-		if (encoded > 90) {
-			encoded = encoded - 26;
-		} else if (encoded < 65) {
-			encoded = encoded + 26;
-		}	
+		ascii = ascii - 65
+		let encoded = (ascii + shift)%26;
+		if (encoded < 0) {
+			encoded = encoded + 91
+		} else {
+			encoded = encoded + 65
+		}
 		encrypted.push(String.fromCharCode(encoded))
-	} else if (ascii >= 97 && ascii <=122) {
-		let encoded = ascii + shift
-		console.log(encoded)
-		if (encoded > 122) {
-			encoded = encoded - 26;
-		} else if(encoded < 97) {
-			encoded = encoded + 26;
+	} else if (ascii >= 97 && ascii <= 122) {
+		ascii = ascii - 97
+		let encoded = (ascii + shift)%26
+		if (encoded < 0) {
+			encoded = encoded + 123
+		} else {
+			encoded = encoded + 97
 		}
 		encrypted.push(String.fromCharCode(encoded))
 	} else {
