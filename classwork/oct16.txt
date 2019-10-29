@@ -1,0 +1,10 @@
+<script>
+let students = {"Mary": 99, "Evgeny": 67, "Kenzie": 95, "Kia": 100, "Jason": 74, "Chris": 48}
+
+while(let student < students.length) {
+	if(students.student < 75) {
+		alert("the student " + student +" is below average.")
+	}
+}
+
+</script>
