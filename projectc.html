@@ -1,0 +1,47 @@
+<script>
+"use strict";
+
+const items = {"with": ["Knights slay dragons ____ swords.", "Dragons kill knights ____ fire.", "Princesses eat soup ____ the correct spoon.", "The dragon shares a cave ____ some bats.", "The princess is safer ____ the knight."],
+               "at": ["The knight stared ____ the large dragon.", "The man glanced ____ the flying dragon and ran.", "The princess was not ____ home.", "The dragon kills ____ midnight.", "We must save that knight ____ once!"],
+			   "to": ["The dragon flew close ____ the castle", "The dragon took the princess ____ its mountain.", "The people listened ____ the dragon's roars.", "The knight went ____ the dragon's lair.", "The princess gave a token ____ the knight."],
+			   "in": ["There were large teeth ____ the dragon's mouth.", "There is magic ____ the air", "The knight found the dragon ____ the cave.", "The princess was not ____ her bed.", "No one ____ the castle was safe."],
+			   "for": ["They were not prepared ____ an attack.", "She waited ____ many days, but no one saved her.", "The dragon searched ____ some knights to eat.", "Kings will do anything ____ gold or power.", "The dragon was eager ____ the hunt to begin."]
+			   };
+			   
+let scores = {"with": 0, "at": 0, "to": 0, "in": 0, "for": 0}; 
+
+let response = "";
+
+let worstPrep = "";
+
+const getNextItem = function() {
+	let prepositions = Object.keys(scores);
+	let random = parseInt(Math.random()*5);
+	let lowest = 99999;
+	for(let score in scores) {
+		if(scores[score] < lowest) {
+			lowest = scores[score];
+		};
+	};
+	for(let i = 0; i < prepositions.length; i++) {
+		if(scores[prepositions[i]] == lowest) {
+			worstPrep = prepositions[i];
+		};
+	};
+	return items[worstPrep][random];
+};
+
+while(response != "quit") {
+	let current = getNextItem();
+	response = prompt("Which fits best: with, at, to, in, or for?\n" + current).trim().toLowerCase();
+	if(response == worstPrep) {
+		scores[worstPrep]++;
+		alert("That is correct!");
+	} else {
+		scores[worstPrep]--;
+		let correct = current.replace("____", worstPrep);
+		alert("No, the correct answer is: " + correct);
+	};
+};
+
+</script>
