@@ -1,0 +1,12 @@
+<script>
+"use strict"
+let text = prompt("Enter a text you want messed up.");
+
+let the = text.replace(/\bAn?\b/g, "T'he").replace(/\ban?\b/g, "t'he");
+
+let a_n = the.replace(/\bThe(\s+[aeiou])/g, "An$1").replace(/\bthe(\s+[aeiou])/g, "an$1").replace(/\bthe(\s+[^aeiou])/g, "a$1").replace(/\bThe(\s+[^aeiou])/g, "A$1");
+
+let last = a_n.replace(/T'he/g, "The").replace(/t'he/g, "the")
+
+alert(last)
+</script>

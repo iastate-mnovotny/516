@@ -1,0 +1,8 @@
+<script>
+"use strict";
+
+let english = prompt("Enter the text you would like translated into Haigy Paigy.");
+let haigypaigy = english.replace(/([aeiouy]+)/gi, "aig$1").replace(/(aig\w+)aige\b/g, "$1e");
+alert(haigypaigy);
+
+</script>
