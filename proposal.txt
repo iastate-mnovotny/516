@@ -1,0 +1,20 @@
+516 Project Proposal: MacKenzie Novotny
+
+I will be doing some corpus processing of a French lexical database. The database I have located 
+allows me to download files in a variety of formats. It has lexical and orthographical 
+information, as well as a unique pronunciation guide for each word. This database also includes 
+frequency information and syllable structures for each word. The literature for the database gives 
+information about the phonemic system, which uses capital letters and symbols instead of 
+traditional IPA symbols to circumvent encoding errors and allow the data to be read into multiple 
+different file formats. The words are taken from a corpus of movie subtitles, and frequencies are 
+relative to the corpus. This is not the ideal corpus for future linguistic research, but it will be an 
+excellent starting point for a future French pronunciation training system. 
+
+My final goal is to extract sets of minimal pairs of the structure CVC where the vowel defines 
+the minimal pair. To do this, I will first have to put the text into a JavaScript readable format. 
+Next, I can identify the words with the structure CVC. Of these words, I want an output of word 
+sets that differ only by the medial vowel sound. Ideally, these are saved in a JSON file as an 
+object. This will require regular expressions, loops, and the use of node.js among other 
+knowledge I have gained from this class and elsewhere. I recognize that this is an ambitious 
+project, but I hope I can at least do a small portion before the end of the semester. 
+      
