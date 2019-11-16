@@ -6,6 +6,7 @@
 // this function will be invoked when the button is clicked
 function process() {
 	let text = document.getElementById("input").value;
+	let processed = text.toUpperCase().replace(/[^A-Z]/g, " ").replace(/[\s]+/g, " ").trim(); //casts to upper case, removes punctuation and extra white space
 	let tokens = processed.split(" "); // array of tokens
 	let freqTypes = {}; // will contain types and their frequencies in the text
 	for(let token of tokens) {
