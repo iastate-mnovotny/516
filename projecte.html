@@ -1,0 +1,25 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+// this function will be invoked when the button is clicked
+function process() {
+	let text = document.getElementById("input").value;
+	let tokens = processed.split(" "); // array of tokens
+	let freqTypes = {}; // will contain types and their frequencies in the text
+	for(let token of tokens) {
+		if(freqTypes.hasOwnProperty(token)) {
+			freqTypes[token]++;
+		} else {
+			freqTypes[token] = 1;
+		};
+	}; // for each token, checks to see if it is in the types object, increases the count if so, other wise adds it. 
+	let listOfTypes = Object.keys(freqTypes).sort(makeComparison) // types in order of frequency. 
+	function makeComparison(a, b)  {
+		return freqTypes[a] - freqTypes[b]
+	} // sorts based on frequency, not alphabet.
+	let ttr = listOfTypes.length/tokens.length
+	document.getElementById("output").value = "Tokens to types ratio: " + ttr + "\nTypes dictionary from least to most frequent:\n" + listOfTypes.join("\n").toLowerCase();
+};
+</script>
